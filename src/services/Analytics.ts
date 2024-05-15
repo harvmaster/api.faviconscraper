@@ -20,6 +20,7 @@ export type ScraperEvent = {
   
   completed?: Date;
   result?: ScraperResult;
+  errors?: string[];
   data?: any;
 }
 
