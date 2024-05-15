@@ -3,6 +3,7 @@ import puppeteer from 'puppeteer';
 import probe from 'probe-image-size'
 
 import cacheManager from '../../services/CacheManager';
+import analytics from '../../services/Analytics';
 
 type ProbedInfo = {
     width: number;
@@ -28,10 +29,21 @@ type ImageInfo = {
 export const getIcon = async (req, res) => {
     const { url } = req.query;
 
+    const ip = req.headers['x-forwarded-for']
+
+    console.log("Fetching icons for", url, "from", ip, ' at ', new Date().toLocaleDateString());
+    const event = analytics.createEvent(ip, url as string);
+    // console.log('Created event')
+
     // Check if url is in cache
     const cachedIcons = cacheManager.get(url);
     if (cachedIcons) {
-        console.log("Returning cached icons");
+        // console.log("Returning cached icons");
+
+        event.cache = true;
+        event.completed = new Date();
+        event.result = cachedIcons;
+
         return res.json(cachedIcons);
     }
 
@@ -73,7 +85,7 @@ export const getIcon = async (req, res) => {
             });
         });
 
-        console.log(icons);
+        // console.log(icons);
 
         await browser.close();
 
@@ -99,9 +111,9 @@ export const getIcon = async (req, res) => {
         }
 
         const result: ImageInfo[] = await Promise.all(icons.map(async icon => {
-            console.log(icon)
+            // console.log(icon)
             const size = await probe(icon).catch(err => console.error) as ProbedInfo;
-            console.log(size)
+            // console.log(size)
             return {
                 size: {
                     width: size.width,
@@ -115,6 +127,10 @@ export const getIcon = async (req, res) => {
 
         // Cache the result
         cacheManager.set(url, result, Date.now() + 1000 * 60 * 60 * 24 * 14); // 24 hours
+
+        // Analytics
+        event.completed = new Date();
+        event.result = result;
 
         return res.json(
             result.sort((a, b) => b.size.width - a.size.width)
