@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 type FaviconResult = {
   src: string;
   size: {
@@ -28,9 +30,28 @@ class CacheManager {
 
   public set(key: string, value: any, expiration: number): void {
     this.cache.push({ key, value, expiration });
+    if(this.cache.length % 100) this.saveCache();
+  }
+
+  public loadCache(): void {
+    try {
+      const cache = fs.readFileSync('cache.json', 'utf-8');
+      this.cache = JSON.parse(cache);
+    } catch (error) {
+      console.error('Error loading cache:', error);
+    }
+  }
+
+  public saveCache(): void {
+    fs.writeFileSync('cache.json', JSON.stringify(this.cache, null, 2));
+  }
+
+  public getCache(): CachedObject[] {
+    return this.cache;
   }
 }
 
 const cacheManager = new CacheManager();
+cacheManager.loadCache();
 
 export default cacheManager;

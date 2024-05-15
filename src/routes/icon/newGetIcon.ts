@@ -48,6 +48,7 @@ export const getIcon = async (req, res) => {
     }
 
     let page;
+    let errors = []
     try {
         const browser = await getBrowserInstance();
         page = await browser.newPage();
@@ -96,10 +97,13 @@ export const getIcon = async (req, res) => {
                     type: size.type,
                     mime: size.mime,
                     src: icon
-                };
+                } as ImageInfo;
             } catch (err) {
-                console.error(`Error probing image ${icon}:`, err);
-                return null;
+                console.error(`Error probing image ${icon}`);
+                errors.push(err);
+                return {
+                    src: icon
+                } as ImageInfo;
             }
         })).then(results => results.filter(icon => icon !== null));
 
@@ -110,12 +114,14 @@ export const getIcon = async (req, res) => {
 
         return res.json(result.sort((a, b) => b.size.width - a.size.width));
     } catch (error) {
-        console.error("Error fetching icons:", error);
+        console.error(`Error fetching icons for ${url}:` );
+        errors.push(error);
         return res.status(500).json({ error: "Failed to fetch icons." });
     } finally {
         if (page && !page.isClosed()) {
             await page.close();
         }
+        event.errors = errors;
     }
 };
 

@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 export type ImageInfo = {
   size: {
     width: number;
@@ -44,7 +46,14 @@ class Analytics {
       cache: false,
     }
     this.events.push(event);
+    if (this.events.length%250 == 0) {
+      this.saveEvents();
+    }
     return event;
+  }
+
+  public saveEvents() {
+    fs.writeFileSync(`analytics-${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}.json`, JSON.stringify(this.events, null, 2));
   }
 }
 
