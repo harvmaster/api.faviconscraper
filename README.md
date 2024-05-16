@@ -3,6 +3,7 @@
 This project is a favicon scraper API built with Express. It provides endpoints for getting favicons from a specified URL, retrieving analytics, getting cached icons, and clearing the cache.
 
 [Demo](https://www.faviconscraper.mc.hzuccon.com/#/)
+
 And SDK is available [here](https://www.npmjs.com/package/favicons-scraper) ([Source](https://github.com/harvmaster/sdk.favicons-scraper))
 
 ## Config
