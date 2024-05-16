@@ -35,7 +35,8 @@ export const getIcon = async (req, res) => {
     }
 
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    console.log("Fetching icons for", url, "from", ip, 'at', new Date().toLocaleTimeString(), new Date().toLocaleDateString());
+    console.log("Fetching icons for", url, "from", ip, 'at', new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' }), ' (newGetIcon)');
+    // console.log("Fetching icons for", url, "from", ip, 'at', new Date().toLocaleTimeString(), new Date().toLocaleDateString());
 
     const event = analytics.createEvent(ip, url as string);
     const cachedIcons = cacheManager.get(url);
@@ -112,11 +113,11 @@ export const getIcon = async (req, res) => {
         event.completed = new Date();
         event.result = result;
 
-        return res.json(result.sort((a, b) => b.size.width - a.size.width));
+        res.json(result.sort((a, b) => b.size.width - a.size.width));
     } catch (error) {
         console.error(`Error fetching icons for ${url}:` );
         errors.push(error);
-        return res.status(500).json({ error: "Failed to fetch icons." });
+        res.status(500).json({ error: "Failed to fetch icons." });
     } finally {
         if (page && !page.isClosed()) {
             await page.close();

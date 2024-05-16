@@ -30,7 +30,7 @@ class CacheManager {
 
   public set(key: string, value: any, expiration: number): void {
     this.cache.push({ key, value, expiration });
-    if(this.cache.length % 100) this.saveCache();
+    if(this.cache.length % 100 == 0) this.saveCache();
   }
 
   public loadCache(): void {
@@ -38,6 +38,11 @@ class CacheManager {
       const cache = fs.readFileSync('cache.json', 'utf-8');
       this.cache = JSON.parse(cache);
     } catch (error) {
+      if (error.code === 'ENOENT') {
+        console.log('No cache found, creating cache file');
+        this.saveCache();
+        return;
+      }
       console.error('Error loading cache:', error);
     }
   }
