@@ -8,6 +8,17 @@ import { getDesktopIcons, getMobileIcons } from "../../services/scrapers/axios";
 import { Icon, RawIcon } from "../../services/scrapers/types";
 import { Puppeteer } from "../../services/scrapers";
 
+const removeDuplicates = (icons: Icon[]): Icon[] => {
+  const seen = new Set();
+  return icons.filter(icon => {
+    if (seen.has(icon.src)) {
+      return false;
+    }
+    seen.add(icon.src);
+    return true;
+  });
+}
+
 export const getIcons = async (req: Request, res: Response) => {
   const { url } = req.query as { url: string };
 
@@ -25,13 +36,15 @@ export const getIcons = async (req: Request, res: Response) => {
   );
 
   const event = Analytics.createEvent(ip, url as string);
-  const cachedIcons = cacheManager.get(url);
+  const cachedIcons = cacheManager.get(url);;
 
   if (cachedIcons) {
+    const icons = removeDuplicates(cachedIcons);
+
     event.cache = true;
     event.completed = new Date();
-    event.result = cachedIcons;
-    return res.json(cachedIcons);
+    event.result = icons;
+    return res.json(icons);
   }
 
   const errors: any[] = []
@@ -121,8 +134,9 @@ export const getIcons = async (req: Request, res: Response) => {
       return icons
     })
 
+
     // If no icons are found, return a 404
-    const iconResults = icons;
+    const iconResults = removeDuplicates(icons);
     if (iconResults.length === 0) {
       event.history.push({
         name: "no_icons_found"
