@@ -20,7 +20,7 @@ class CacheManager {
   public get(key: string): any {
     const cachedObject = this.cache.find((obj) => obj.key === key);
 
-    if (!cachedObject || cachedObject.expiration < Date.now()) {
+    if (!cachedObject || cachedObject.expiration < Date.now() || !cachedObject.value.length) {
       this.cache = this.cache.filter((obj) => obj.key !== key);
       return null;
     }
@@ -30,13 +30,14 @@ class CacheManager {
 
   public set(key: string, value: any, expiration: number): void {
     this.cache.push({ key, value, expiration });
-    if(this.cache.length % 100 == 0) this.saveCache();
+    if(this.cache.length % 25 == 0) this.saveCache();
   }
 
   public loadCache(): void {
     try {
       const cache = fs.readFileSync('cache.json', 'utf-8');
       this.cache = JSON.parse(cache);
+      console.log(`Cache loaded with ${this.cache.length} entries`);
     } catch (error) {
       if (error.code === 'ENOENT') {
         console.log('No cache found, creating cache file');
@@ -53,6 +54,11 @@ class CacheManager {
 
   public getCache(): CachedObject[] {
     return this.cache;
+  }
+
+  public clearCache(): void {
+    this.cache = [];
+    // this.saveCache();
   }
 }
 

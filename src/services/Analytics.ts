@@ -12,6 +12,13 @@ export type ImageInfo = {
 
 export type ScraperResult = ImageInfo[]
 
+export type ScraperHitoryEvent = {
+  name: string;
+  count?: number;
+  icons?: string[];
+  errors?: any[];
+}
+
 export type ScraperEvent = {
   id: string;
   createdAt: Date;
@@ -20,6 +27,7 @@ export type ScraperEvent = {
   domain: string;
   cache: boolean;
   
+  history?: ScraperHitoryEvent[]
   completed?: Date;
   result?: ScraperResult;
   errors?: string[];
@@ -27,6 +35,7 @@ export type ScraperEvent = {
 }
 
 class Analytics {
+  public fileName = `logs/analytics/analytics-${Date.now()}.json`;
   public events: ScraperEvent[] = [];
 
   public track(event: ScraperEvent) {
@@ -44,16 +53,22 @@ class Analytics {
       ip,
       domain,
       cache: false,
+      history: [],
     }
     this.events.push(event);
-    if (this.events.length%250 == 0) {
+    if (this.events.length%100 == 0) {
       this.saveEvents();
     }
     return event;
   }
 
   public saveEvents() {
-    fs.writeFileSync(`analytics-${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}.json`, JSON.stringify(this.events, null, 2));
+    try {
+      fs.writeFileSync(this.fileName, JSON.stringify(this.events, null, 2));
+      // fs.writeFileSync(`analytics-${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}.json`, JSON.stringify(this.events, null, 2));
+    } catch (err) {
+      console.error('Failed to save analytics:', err)
+    }
   }
 }
 
