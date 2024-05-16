@@ -58,7 +58,6 @@ class CacheManager {
 
   public clearCache(): void {
     this.cache = [];
-    // this.saveCache();
   }
 }
 

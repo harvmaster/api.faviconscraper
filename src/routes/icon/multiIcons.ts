@@ -36,6 +36,8 @@ export const getIcons = async (req: Request, res: Response) => {
 
   const errors: any[] = []
   try {
+
+    // get the image size and mime type information
     const probeImages = async (icons: RawIcon[]) => {
 
       const probingErrors: { src: string; error: string }[] = []
@@ -67,15 +69,18 @@ export const getIcons = async (req: Request, res: Response) => {
 
       const iconResults = (await Promise.all(promises).then((icons) => icons.filter((icon) => icon !== null))) as Icon[];
 
-      event.history.push({
-        name: "probing_errors",
-        count: probingErrors.length,
-        errors: probingErrors
-      })
+      if (probingErrors.length > 0) {
+        event.history.push({
+          name: "probing_errors",
+          count: probingErrors.length,
+          errors: probingErrors
+        })
+      }
 
       return iconResults
     }
 
+    // Scrape the page using puppeteer. Add this step to the event history
     const usePuppeteer = async (): Promise<Icon[]> => {
       const [desktopIcons, mobileIcons] = await Promise.all([
         Puppeteer.getDesktopIcons(url as string).then(probeImages).catch(err => []),
@@ -91,6 +96,7 @@ export const getIcons = async (req: Request, res: Response) => {
       return icons
     }
 
+    // Scrape the axios using puppeteer. Add this step to the event history
     const useAxois = async (): Promise<Icon[]> => {
       const [desktopIcons, mobileIcons] = await Promise.all([
         getDesktopIcons(url as string).then(probeImages).catch(err => []),
@@ -106,6 +112,7 @@ export const getIcons = async (req: Request, res: Response) => {
       return icons
     }
 
+    // Try to get the icons using axios. If no icons are found, try puppeteer
     const icons: Icon[] = await useAxois().then(icons => {
       if (icons.length === 0) {
         console.log("No icons found using axios, trying puppeteer", url)
@@ -114,25 +121,7 @@ export const getIcons = async (req: Request, res: Response) => {
       return icons
     })
 
-    // const iconPromises = icons.map(async (icon) => {
-    //   try {
-    //     const probed = await probe(icon.src);
-    //     const { width, height, type, mime } = probed;
-
-    //     return {
-    //       size: { width, height },
-    //       type,
-    //       mime,
-    //       src: icon.src,
-    //     } as Icon;
-    //   } catch (e) {
-    //     console.error("Error probing image", icon.src, e);
-    //     errors.push(e.message);
-    //     return null;
-    //   }
-    // });
-
-    // const iconResults = (await Promise.all(iconPromises).then((icons) => icons.filter((icon) => icon !== null))) as Icon[];
+    // If no icons are found, return a 404
     const iconResults = icons;
     if (iconResults.length === 0) {
       event.history.push({
@@ -141,6 +130,7 @@ export const getIcons = async (req: Request, res: Response) => {
       return res.status(404).json({ error: "No icons found" });
     }
 
+    // Update the event and then cache the result
     event.completed = new Date();
     event.result = iconResults;
 
@@ -155,7 +145,6 @@ export const getIcons = async (req: Request, res: Response) => {
     return res.json(iconResults);
   } catch (err) {
     console.error(`Error fetching icons for ${url}`);
-    // errors.push(err.message);
     event.errors = errors;
     return res.status(500).json({ error: "Error fetching icons" });
   }

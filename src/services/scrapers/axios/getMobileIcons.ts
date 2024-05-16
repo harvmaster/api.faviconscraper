@@ -29,11 +29,6 @@ export const getMobileIcons = async (url: string): Promise<RawIcon[]> => {
   }
   let icons: RawIcon[] = [defaultIcon]
 
-  // $('meta[itemprop="image"]').map((i, element) => {
-  //   const content = $(element).attr('content');
-  //   return  content.startsWith('/') ? `${location}${content}` : content;
-  // }).get().forEach(icon => icons.push({ src: icon, source: 'mobile' }));
-
   $('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"], link[rel="apple-touch-icon-precomposed"]').map((i, element) => {
     const href = $(element).attr('href');
     let src = `${location}${href}`;
@@ -49,12 +44,6 @@ export const getMobileIcons = async (url: string): Promise<RawIcon[]> => {
     if (href.startsWith('/')) src = `${location}${href}`;
     return src
   }).get().forEach(icon => icons.push({ src: icon, source: 'mobile' }));
-
-  // Href ends with favicon.ico
-  // $('link[href$="favicon.ico"]').map((i, element) => {
-  //   const href = $(element).attr('href');
-  //   return href.startsWith('/') ? `${location}${href}` : href;
-  // }).get().forEach(icon => icons.push({ src: icon, source: 'desktop' }));
 
   return icons
 }

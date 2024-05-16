@@ -65,7 +65,6 @@ class Analytics {
   public saveEvents() {
     try {
       fs.writeFileSync(this.fileName, JSON.stringify(this.events, null, 2));
-      // fs.writeFileSync(`analytics-${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}.json`, JSON.stringify(this.events, null, 2));
     } catch (err) {
       console.error('Failed to save analytics:', err)
     }
