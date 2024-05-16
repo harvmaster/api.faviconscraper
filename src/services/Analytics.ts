@@ -70,8 +70,15 @@ class Analytics {
       console.error('Failed to save analytics:', err)
     }
   }
+
+  public createAnalyticsFolder () {
+    if (!fs.existsSync('logs/analytics')) {
+      fs.mkdirSync('logs/analytics', { recursive: true });
+    }
+  }
 }
 
 const analytics = new Analytics();
+analytics.createAnalyticsFolder();
 
 export default analytics;
