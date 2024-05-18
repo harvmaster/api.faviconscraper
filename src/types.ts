@@ -3,6 +3,7 @@ export type Icon = {
   type: string;
   mime: string;
   src: string;
+  source: 'desktop' | 'mobile';
 }
 
 export type RawIcon = {

@@ -1,14 +1,6 @@
 import fs from 'fs'
 import { Icon } from '../types';
 
-type FaviconResult = {
-  src: string;
-  size: {
-      width: number;
-      height: number;
-  };
-}
-
 type CachedObject = {
   key: string;
   value: Icon[]
@@ -27,7 +19,7 @@ class CacheManager {
     return cachedObject.value;
   }
 
-  public set(key: string, value: any, expiration: number): void {
+  public set(key: string, value: Icon[], expiration: number): void {
     this.cache[key] = {
       key,
       value,

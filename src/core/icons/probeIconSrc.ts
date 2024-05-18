@@ -22,7 +22,8 @@ export const probeIconSrc = async (icon: RawIcon): Promise<PipelineAction<Icon>>
         size: { width, height },
         type,
         mime,
-        src: icon.src
+        src: icon.src,
+        source: icon.source
       }
     }
   } catch (error) {
