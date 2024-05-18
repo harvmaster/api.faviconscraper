@@ -1,7 +1,10 @@
 import axios from 'axios'
 import { load } from 'cheerio';
 
-import { FAVICON_TAGS } from '../FaviconTags'
+
+import faviconsFromHTML from './faviconsFromHTML';
+import faviconsFromManifest from './faviconsFromManifest';
+
 import { getResponseDomain } from './utils';
 
 export type AxiosOptions = {
@@ -15,29 +18,30 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
     }
   })
 
+  const [
+    manifestIcons,
+    htmlIcons
+  ] = await Promise.all([
+    faviconsFromManifest(res),
+    faviconsFromHTML(res)
+  ])
+
+  // console.log(`Icons for ${url}`)
+  // console.log(manifestIcons, htmlIcons)
+
+  const unformattedIcons = [...new Set([...manifestIcons, ...htmlIcons])]
+
   let location = getResponseDomain(res);
   if (location.endsWith('/')) location = location.slice(0, -1);
-  
-  const html = res.data;
-  const $ = load(html);
 
-  let icons: string[] = [`${location}/favicon.ico`]
+  // console.log(unformattedIcons)
 
-  $(FAVICON_TAGS.join(', ')).map((i, element) => {
-    const href = $(element).attr('href');
-    let src = `${location}/${href}`;
-    if (href.startsWith('http')) src = href;
-    if (href.startsWith('/')) src = `${location}${href}`;
-    return src
-  }).get().forEach(icon => icons.push(icon));
-
-  // Href ends with favicon.ico or favicon*.ico
-  $('link[href$="favicon.ico"], link[href*="favicon"].ico').map((i, element) => {
-    const href = $(element).attr('href');
-    let src = `${location}${href}`;
-    if (href.startsWith('http')) src = href;
-    return src
-  }).get().forEach(icon => icons.push(icon));
+  const icons = unformattedIcons.map(icon => {
+    if (icon.startsWith('http')) return icon;
+    if (icon.startsWith('/')) return `${location}${icon}`;
+    return `${location}/${icon}`;
+  })
+  icons.push(`${location}/favicon.ico`)
 
   return icons
 }
