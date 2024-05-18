@@ -6,4 +6,5 @@ export const FAVICON_TAGS = [
   'link[rel*="msapplication-square"]',
   'link[rel*="mask-icon"]',
   'link[rel*="fluid-icon"]',
+  'meta[content*="favicon.ico"]'
 ]

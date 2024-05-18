@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { load } from 'cheerio';
 
 
@@ -11,12 +11,27 @@ export type AxiosOptions = {
   agent: string;
 }
 
+const getHead = (html: string) => {
+  const $ = load(html)
+  return $('head').html()
+}
+
 export const getFavicons = async (url: string, options: AxiosOptions): Promise<string[]> => {
-  const res = await axios.get(`https://${url}`, {
-    headers: {
-      'User-Agent': options.agent
-    }
-  })
+  let res: AxiosResponse;
+  
+  try {
+    res = await axios.get(`https://${url}`, {
+      headers: {
+        'User-Agent': options.agent
+      }
+    })
+  } catch (err) {
+    if (!err.response) throw err
+    res = err.response
+  }
+
+  // console.log(res.data)
+  console.log(getHead(res.data))
 
   const [
     manifestIcons,
@@ -25,6 +40,9 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
     faviconsFromManifest(res),
     faviconsFromHTML(res)
   ])
+
+  console.log(`Icons for ${url}`)
+  console.log(manifestIcons, htmlIcons)
 
   // console.log(`Icons for ${url}`)
   // console.log(manifestIcons, htmlIcons)

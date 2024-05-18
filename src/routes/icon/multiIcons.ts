@@ -38,6 +38,13 @@ export const getIcons = async (req: Request, res: Response) => {
   const event = Analytics.createEvent(ip, url as string);
   const cachedIcons = cacheManager.get(url);;
 
+  // if (cachedIcons) {
+  //   event.completed = new Date();
+  //   event.cache = true
+  //   event.result = cachedIcons;
+
+  //   return res.json(cachedIcons);
+  // }
   
   const errors: any[] = []
   try {
@@ -115,7 +122,7 @@ export const getIcons = async (req: Request, res: Response) => {
         }),
       ]);
 
-      // console.log(errors)
+      console.log(errors)
 
       const icons = [...desktopIcons, ...mobileIcons];
       event.history.push({
@@ -130,8 +137,8 @@ export const getIcons = async (req: Request, res: Response) => {
     const icons: Icon[] = await useAxois().then(icons => {
       if (icons.length === 0) {
         console.log("No icons found using axios, trying puppeteer", url)
-        return usePuppeteer();
-        // return []
+        // return usePuppeteer();
+        return []
       }
       return icons
     })
@@ -150,7 +157,7 @@ export const getIcons = async (req: Request, res: Response) => {
     event.completed = new Date();
     event.result = iconResults;
 
-    cacheManager.set(url, iconResults, Date.now() + 1000 * 60 * 60 * 24 * 14);
+    // cacheManager.set(url, iconResults, Date.now() + 1000 * 60 * 60 * 24 * 14);
 
     event.history.push({
       name: 'response_sent',

@@ -20,6 +20,7 @@ export const faviconsFromManifest = async (response: AxiosResponse): Promise<str
   const manifestResponse = await axios.get(manifest).catch(err => ({ data: { icons: [] } }))
   const manifestData = manifestResponse.data
 
+  if (!manifestData?.icons) return []
   const icons = manifestData.icons.map((icon: { src: string }) => icon.src)
 
   // return icons.map(icon => ({ src: icon, source: 'manifest' }))
