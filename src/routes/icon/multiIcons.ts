@@ -130,6 +130,7 @@ export const getIcons = async (req: Request, res: Response) => {
       if (icons.length === 0) {
         console.log("No icons found using axios, trying puppeteer", url)
         return usePuppeteer();
+        // return []
       }
       return icons
     })
