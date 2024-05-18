@@ -31,7 +31,7 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
   }
 
   // console.log(res.data)
-  console.log(getHead(res.data))
+  // console.log(getHead(res.data))
 
   const [
     manifestIcons,
@@ -41,8 +41,8 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
     faviconsFromHTML(res)
   ])
 
-  console.log(`Icons for ${url}`)
-  console.log(manifestIcons, htmlIcons)
+  // console.log(`Icons for ${url}`)
+  // console.log(manifestIcons, htmlIcons)
 
   // console.log(`Icons for ${url}`)
   // console.log(manifestIcons, htmlIcons)
