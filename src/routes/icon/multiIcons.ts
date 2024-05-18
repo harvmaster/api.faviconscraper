@@ -38,14 +38,14 @@ export const getIcons = async (req: Request, res: Response) => {
   const event = Analytics.createEvent(ip, url as string);
   const cachedIcons = cacheManager.get(url);;
 
-  // if (cachedIcons) {
-  //   const icons = removeDuplicates(cachedIcons);
+  if (cachedIcons) {
+    const icons = removeDuplicates(cachedIcons);
 
-  //   event.cache = true;
-  //   event.completed = new Date();
-  //   event.result = icons;
-  //   return res.json(icons);
-  // }
+    event.cache = true;
+    event.completed = new Date();
+    event.result = icons;
+    return res.json(icons);
+  }
 
   const errors: any[] = []
   try {
@@ -149,7 +149,7 @@ export const getIcons = async (req: Request, res: Response) => {
     event.completed = new Date();
     event.result = iconResults;
 
-    // cacheManager.set(url, iconResults, Date.now() + 1000 * 60 * 60 * 24 * 14);
+    cacheManager.set(url, iconResults, Date.now() + 1000 * 60 * 60 * 24 * 14);
 
     event.history.push({
       name: 'response_sent',
