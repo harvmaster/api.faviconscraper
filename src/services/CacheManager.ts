@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { Icon } from '../types';
 
 type FaviconResult = {
   src: string;
@@ -10,34 +11,47 @@ type FaviconResult = {
 
 type CachedObject = {
   key: string;
-  value: FaviconResult[]
+  value: Icon[]
   expiration: number;
 }
 
+type Cache = {
+  [key: string]: CachedObject;
+}
+
 class CacheManager {
-  private cache: CachedObject[] = [];
+  private cache: Cache = {};
 
-  public get(key: string): any {
-    const cachedObject = this.cache.find((obj) => obj.key === key);
-
-    if (!cachedObject || cachedObject.expiration < Date.now() || !cachedObject.value.length) {
-      this.cache = this.cache.filter((obj) => obj.key !== key);
-      return null;
-    }
-
+  public get(key: string): Icon[] | undefined {
+    const cachedObject = this.cache[key];
     return cachedObject.value;
   }
 
   public set(key: string, value: any, expiration: number): void {
-    this.cache.push({ key, value, expiration });
-    if(this.cache.length % 25 == 0) this.saveCache();
+    this.cache[key] = {
+      key,
+      value,
+      expiration
+    };
+
+    if (Object.keys(this.cache).length % 25 == 0) this.saveCache();
   }
 
   public loadCache(): void {
     try {
-      const cache = fs.readFileSync('cache.json', 'utf-8');
-      this.cache = JSON.parse(cache);
-      console.log(`Cache loaded with ${this.cache.length} entries`);
+      const cacheRaw = fs.readFileSync('cache.json', 'utf-8');
+      let cache = JSON.parse(cacheRaw);
+
+      // Cache is still an array, convert to object
+      if (cache.length)  {
+        cache = cache.reduce((acc, cur) => {
+          acc[cur.key] = cur;
+          return acc;
+        }, {});
+      }
+
+      this.cache = cache;
+      console.log(`Cache loaded with ${Object.keys(this.cache).length} entries`);
     } catch (error) {
       if (error.code === 'ENOENT') {
         console.log('No cache found, creating cache file');
@@ -52,12 +66,12 @@ class CacheManager {
     fs.writeFileSync('cache.json', JSON.stringify(this.cache, null, 2));
   }
 
-  public getCache(): CachedObject[] {
+  public getCache(): Cache {
     return this.cache;
   }
 
   public clearCache(): void {
-    this.cache = [];
+    this.cache = {};
   }
 }
 
