@@ -28,7 +28,7 @@ export const getFavicons = async (url: string, options: BrowserOptions): Promise
      await page.setViewport(options.viewport);
 
      // Wait until all network requests are complete
-     await page.goto(`https://${url}`, { waitUntil: 'networkidle0' });
+     await page.goto(`https://${url}`, { waitUntil: 'networkidle0', timeout: 10000});
 
     icons = await page.evaluate(() => {
       const location = window.location.origin;

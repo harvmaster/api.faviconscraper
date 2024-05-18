@@ -1,8 +1,8 @@
-import puppeteer from 'puppeteer';
+import puppeteer, { Browser } from 'puppeteer';
 
 let browserPromise = null;
 
-export const getBrowserInstance = async () => {
+export const getBrowserInstance = async (): Promise<Browser> => {
     if (!browserPromise) {
         browserPromise = puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
