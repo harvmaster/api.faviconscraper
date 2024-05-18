@@ -1,9 +1,9 @@
 import { getBrowserInstance } from "../../Browser";
-import { RawIcon } from "../types";
 
 export type BrowserOptions = {
   useScripts?: boolean;
   agent: string;
+  viewport: { width: number; height: number };
 }
 
 export const getFavicons = async (url: string, options: BrowserOptions): Promise<string[]> => {
@@ -23,9 +23,13 @@ export const getFavicons = async (url: string, options: BrowserOptions): Promise
       if (filteredContent.includes(req.resourceType())) return req.abort();
       return req.continue();
     });
-
+    
     await page.setUserAgent(options.agent);
-    await page.goto(`https://${url}`);
+     await page.setViewport(options.viewport);
+
+     // Wait until all network requests are complete
+     await page.goto(`https://${url}`, { waitUntil: 'networkidle0' });
+
     icons = await page.evaluate(() => {
       const location = window.location.origin;
       const icons = Array.from(document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"], link[rel="apple-touch-icon-precomposed"], link[href$="favicon.ico"]'));

@@ -72,7 +72,7 @@ export const getIcon = async (req, res) => {
 
         // Wait until all network requests are complete
         await page.goto(`https://${url}`, { waitUntil: 'networkidle0' });
-
+        
         // Optionally wait for the icon selector (adjust timeout as needed or remove this line if not required)
         // await page.waitForSelector('link[rel="apple-touch-icon"]', { timeout: 5000 });
 
