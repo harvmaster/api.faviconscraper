@@ -7,6 +7,7 @@ import Analytics from "../../services/Analytics";
 import { getDesktopIcons, getMobileIcons } from "../../services/scrapers/axios";
 import { Icon, RawIcon } from "../../services/scrapers/types";
 import { Puppeteer } from "../../services/scrapers";
+import getFromManifest from "../../services/scrapers/axios/getFromManifest";
 
 const removeDuplicates = (icons: Icon[]): Icon[] => {
   const seen = new Set();
@@ -38,14 +39,14 @@ export const getIcons = async (req: Request, res: Response) => {
   const event = Analytics.createEvent(ip, url as string);
   const cachedIcons = cacheManager.get(url);;
 
-  if (cachedIcons) {
-    const icons = removeDuplicates(cachedIcons);
+  // if (cachedIcons) {
+  //   const icons = removeDuplicates(cachedIcons);
 
-    event.cache = true;
-    event.completed = new Date();
-    event.result = icons;
-    return res.json(icons);
-  }
+  //   event.cache = true;
+  //   event.completed = new Date();
+  //   event.result = icons;
+  //   return res.json(icons);
+  // }
 
   const errors: any[] = []
   try {
@@ -114,6 +115,7 @@ export const getIcons = async (req: Request, res: Response) => {
       const [desktopIcons, mobileIcons] = await Promise.all([
         getDesktopIcons(url as string).then(probeImages).catch(err => []),
         getMobileIcons(url as string).then(probeImages).catch(err => []),
+        getFromManifest(url as string).then(probeImages).catch(err => [])
       ]);
 
       const icons = [...desktopIcons, ...mobileIcons];
@@ -129,8 +131,8 @@ export const getIcons = async (req: Request, res: Response) => {
     const icons: Icon[] = await useAxois().then(icons => {
       if (icons.length === 0) {
         console.log("No icons found using axios, trying puppeteer", url)
-        return usePuppeteer();
-        // return []
+        // return usePuppeteer();
+        return []
       }
       return icons
     })
@@ -149,7 +151,7 @@ export const getIcons = async (req: Request, res: Response) => {
     event.completed = new Date();
     event.result = iconResults;
 
-    cacheManager.set(url, iconResults, Date.now() + 1000 * 60 * 60 * 24 * 14);
+    // cacheManager.set(url, iconResults, Date.now() + 1000 * 60 * 60 * 24 * 14);
 
     event.history.push({
       name: 'response_sent',

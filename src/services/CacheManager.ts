@@ -16,7 +16,7 @@ class CacheManager {
 
   public get(key: string): Icon[] | undefined {
     const cachedObject = this.cache[key];
-    return cachedObject.value;
+    return cachedObject?.value;
   }
 
   public set(key: string, value: Icon[], expiration: number): void {

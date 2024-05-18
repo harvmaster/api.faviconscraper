@@ -1,5 +1,8 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 import { load } from 'cheerio';
+
+import { FAVICON_TAGS } from '../FaviconTags'
+import { getResponseDomain } from './utils';
 
 export type AxiosOptions = {
   agent: string;
@@ -12,12 +15,6 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
     }
   })
 
-  const getResponseDomain = (response: AxiosResponse) => {
-    const url = response.request.res.responseUrl;
-    const domain = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/\n?]+)/img);
-    return domain ? domain[0] : response.request.res.responseUrl;
-  }
-
   let location = getResponseDomain(res);
   if (location.endsWith('/')) location = location.slice(0, -1);
   
@@ -26,7 +23,7 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
 
   let icons: string[] = [`${location}/favicon.ico`]
 
-  $('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"], link[rel="apple-touch-icon-precomposed"]').map((i, element) => {
+  $(FAVICON_TAGS.join(', ')).map((i, element) => {
     const href = $(element).attr('href');
     let src = `${location}/${href}`;
     if (href.startsWith('http')) src = href;
