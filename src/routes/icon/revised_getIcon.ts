@@ -10,8 +10,14 @@ import { probeIconSrc } from "../../core/icons/probeIconSrc";
 import { removeDuplicates } from "../../lib";
 
 const CACHE_TIME = 1000 * 60 * 60 * 24 * 14
-const USE_CACHE = false
 
+const LOG_REQUEST = true
+const USE_CACHE = true
+
+const USE_AXIOS = true
+const USE_PUPPETEER = false
+
+// try to get the icons from the cache
 const tryFromCache = async (event: ScraperEvent, url: string) => {
   if (!USE_CACHE) return null
 
@@ -28,7 +34,10 @@ const tryFromCache = async (event: ScraperEvent, url: string) => {
   return null;
 }
 
+// log the request
 const logRequest = (req: Request) => {
+  if (!LOG_REQUEST) return
+
   const url = req.query.url as string;
   const ip = req.headers["x-forwarded-for"] as string;
   console.log(
@@ -39,11 +48,40 @@ const logRequest = (req: Request) => {
   );
 }
 
+// fetch the icons using axios
 const useAxios = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
+  if (!USE_AXIOS) throw new Error("Axios is disabled");
+
   let errors: any[] = []
+  const handleError = (err: any) => {
+    errors.push(err);
+    return []
+  }
+
   const [desktopIcons, mobileIcons] = await Promise.all([
-    Axios.getDesktopIcons(url as string),
-    Axios.getMobileIcons(url as string)
+    Axios.getDesktopIcons(url as string).catch(handleError),
+    Axios.getMobileIcons(url as string).catch(handleError)
+  ]);
+  
+  if (errors.length) throw errors
+  
+  const icons = removeDuplicates([...desktopIcons, ...mobileIcons], (icon) => icon.src);
+  return icons
+}
+
+// fetch the icons using puppeteer
+const usePuppeteer = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
+  if (!USE_PUPPETEER) throw new Error("Puppeteer is disabled");
+
+  let errors: any[] = []
+  const handleError = (err: any) => {
+    errors.push(err);
+    return []
+  }
+
+  const [desktopIcons, mobileIcons] = await Promise.all([
+    Puppeteer.getDesktopIcons(url as string).catch(handleError),
+    Puppeteer.getMobileIcons(url as string).catch(handleError)
   ]);
 
   if (errors.length) throw errors
@@ -52,16 +90,7 @@ const useAxios = async (event: ScraperEvent, url: string): Promise<RawIcon[]> =>
   return icons
 }
 
-const usePuppeteer = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
-  const [desktopIcons, mobileIcons] = await Promise.all([
-    Puppeteer.getDesktopIcons(url as string),
-    Puppeteer.getMobileIcons(url as string)
-  ]);
-
-  const icons = removeDuplicates([...desktopIcons, ...mobileIcons], (icon) => icon.src);
-  return icons
-}
-
+// pipe the event through the function and log the result to the event
 const pipeEvent = async <T>(event: ScraperEvent, name: string, fn: () => Promise<T>): Promise<T> => {
   const { result, errors } = await fn().then((res) => ({ result: res, errors: [] })).catch((err) => ({ result: [], errors: [err] })) as { result: T, errors: any[] };
 
@@ -74,12 +103,14 @@ const pipeEvent = async <T>(event: ScraperEvent, name: string, fn: () => Promise
   return result
 }
 
+// probe the icons to get their dimensions
 const probeIcons = async (event: ScraperEvent, icons: RawIcon[]): Promise<Icon[]> => {
   const probedIconPromises = await Promise.all(icons.map(icon => probeIconSrc(icon)));
 
   const events = []
   const probedIcons = []
 
+  // push the events and icons to their respective arrays
   for (const { data, event } of probedIconPromises) {
     events.push(event);
     if (data) probedIcons.push(data);
