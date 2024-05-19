@@ -15,7 +15,7 @@ const LOG_REQUEST = true
 const USE_CACHE = true
 
 const USE_AXIOS = true
-const USE_PUPPETEER = false
+const USE_PUPPETEER = true
 
 // try to get the icons from the cache
 const tryFromCache = async (event: ScraperEvent, url: string) => {
