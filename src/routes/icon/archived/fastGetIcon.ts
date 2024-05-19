@@ -2,8 +2,8 @@ import axios from 'axios';
 import cheerio from 'cheerio';
 import probe from 'probe-image-size';
 
-import cacheManager from '../../services/CacheManager';
-import analytics from '../../services/Analytics';
+import cacheManager from '../../../services/CacheManager';
+import analytics from '../../../services/Analytics';
 
 type ProbedInfo = {
     width: number;

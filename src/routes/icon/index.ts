@@ -1,6 +1,6 @@
 import Express from 'express'
 
-import getIcon from './revised_getIcon'
+import getIcon from './getIcons'
 
 const router = Express.Router()
 

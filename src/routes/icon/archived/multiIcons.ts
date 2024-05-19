@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import probe from "probe-image-size";
 
-import cacheManager from "../../services/CacheManager";
-import Analytics from "../../services/Analytics";
+import cacheManager from "../../../services/CacheManager";
+import Analytics from "../../../services/Analytics";
 
-import { getDesktopIcons, getMobileIcons } from "../../services/scrapers/axios";
-import { Icon, RawIcon } from "../../services/scrapers/types";
-import { Puppeteer } from "../../services/scrapers";
+import { getDesktopIcons, getMobileIcons } from "../../../services/scrapers/axios";
+import { Icon, RawIcon } from "../../../services/scrapers/types";
+import { Puppeteer } from "../../../services/scrapers";
 
 const removeDuplicates = (icons: Icon[]): Icon[] => {
   const seen = new Set();

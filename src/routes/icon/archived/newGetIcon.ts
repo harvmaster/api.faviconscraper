@@ -2,9 +2,9 @@ import axios from 'axios';
 import puppeteer from 'puppeteer';
 import probe from 'probe-image-size';
 
-import cacheManager from '../../services/CacheManager';
-import analytics from '../../services/Analytics';
-import { getBrowserInstance } from '../../services/Browser';
+import cacheManager from '../../../services/CacheManager';
+import analytics from '../../../services/Analytics';
+import { getBrowserInstance } from '../../../services/Browser';
 
 type ProbedInfo = {
     width: number;
