@@ -14,6 +14,7 @@ export type ScraperResult = ImageInfo[]
 
 export type ScraperHitoryEvent = {
   name: string;
+  data?: any;
   count?: number;
   icons?: string[];
   errors?: any[];

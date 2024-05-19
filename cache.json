@@ -69514,5 +69514,189 @@
       }
     ],
     "expiration": 1717259178945
+  },
+  "fonts.googleapis.com": {
+    "key": "fonts.googleapis.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "onlinelibrary.wiley.com": {
+    "key": "onlinelibrary.wiley.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "i.ytimg.com": {
+    "key": "i.ytimg.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "fonts.gstatic.com": {
+    "key": "fonts.gstatic.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "img.youtube.com": {
+    "key": "img.youtube.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "gmpg.org": {
+    "key": "gmpg.org",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "gstatic.com": {
+    "key": "gstatic.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "googletagmanager.com": {
+    "key": "googletagmanager.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "sciencedirect.com": {
+    "key": "sciencedirect.com",
+    "value": [
+      null,
+      null,
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "googleadservices.com": {
+    "key": "googleadservices.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "tandfonline.com": {
+    "key": "tandfonline.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "forms.gle": {
+    "key": "forms.gle",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "purl.org": {
+    "key": "purl.org",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "static.wixstatic.com": {
+    "key": "static.wixstatic.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "thelancet.com": {
+    "key": "thelancet.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "rei.com": {
+    "key": "rei.com",
+    "value": [
+      null,
+      null,
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "code.google.com": {
+    "key": "code.google.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "platform.twitter.com": {
+    "key": "platform.twitter.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "weforum.org": {
+    "key": "weforum.org",
+    "value": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "analytics.google.com": {
+    "key": "analytics.google.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "blip.tv": {
+    "key": "blip.tv",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "mc.yandex.ru": {
+    "key": "mc.yandex.ru",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "kstatic.googleusercontent.com": {
+    "key": "kstatic.googleusercontent.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "bfi.org.uk": {
+    "key": "bfi.org.uk",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
+  },
+  "cdbaby.com": {
+    "key": "cdbaby.com",
+    "value": [
+      null
+    ],
+    "expiration": 1209600000
   }
 }
