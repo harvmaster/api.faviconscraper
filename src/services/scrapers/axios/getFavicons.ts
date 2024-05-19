@@ -1,17 +1,10 @@
 import axios, { AxiosResponse } from 'axios'
-import { load } from 'cheerio';
 
 import { pullFromHTML, pullFromManifest } from './strategies';
-
 import { getResponseDomain } from './utils';
 
 export type AxiosOptions = {
   agent: string;
-}
-
-const getHead = (html: string) => {
-  const $ = load(html)
-  return $('head').html()
 }
 
 export const getFavicons = async (url: string, options: AxiosOptions): Promise<string[]> => {
@@ -28,9 +21,6 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
     res = err.response
   }
 
-  // console.log(res.data)
-  // console.log(getHead(res.data))
-
   const [
     manifestIcons,
     htmlIcons
@@ -39,18 +29,10 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
     pullFromHTML(res)
   ])
 
-  // console.log(`Icons for ${url}`)
-  // console.log(manifestIcons, htmlIcons)
-
-  // console.log(`Icons for ${url}`)
-  // console.log(manifestIcons, htmlIcons)
-
   const unformattedIcons = [...new Set([...manifestIcons, ...htmlIcons])]
 
   let location = getResponseDomain(res);
   if (location.endsWith('/')) location = location.slice(0, -1);
-
-  // console.log(unformattedIcons)
 
   const icons = unformattedIcons.map(icon => {
     if (icon.startsWith('http')) return icon;

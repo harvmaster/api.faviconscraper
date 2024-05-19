@@ -23,7 +23,6 @@ export const pullFromManifest = async (response: AxiosResponse): Promise<string[
   if (!manifestData?.icons) return []
   const icons = manifestData.icons.map((icon: { src: string }) => icon.src)
 
-  // return icons.map(icon => ({ src: icon, source: 'manifest' }))
   return icons
 }
 
