@@ -69022,5 +69022,497 @@
       }
     ],
     "expiration": 1717157377569
+  },
+  "i0.wp.com": {
+    "key": "i0.wp.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://i0.wp.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259140332
+  },
+  "storage.googleapis.com": {
+    "key": "storage.googleapis.com",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://storage.googleapis.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259140698
+  },
+  "lh3.googleusercontent.com": {
+    "key": "lh3.googleusercontent.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://lh3.googleusercontent.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259141073
+  },
+  "i2.wp.com": {
+    "key": "i2.wp.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://i2.wp.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259143374
+  },
+  "maxcdn.bootstrapcdn.com": {
+    "key": "maxcdn.bootstrapcdn.com",
+    "value": [
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.bootstrapcdn.com/assets/img/favicons/apple-touch-icon.6126de5.png"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.bootstrapcdn.com/assets/img/favicons/favicon-32x32.f4c7af0.png"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.bootstrapcdn.com/assets/img/favicons/favicon-16x16.be094a3.png"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.bootstrapcdn.com/assets/img/favicons/favicon.3f81f6a.ico"
+      }
+    ],
+    "expiration": 1717259144864
+  },
+  "is.gd": {
+    "key": "is.gd",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://is.gd/favicon.ico"
+      }
+    ],
+    "expiration": 1717259148166
+  },
+  "i1.wp.com": {
+    "key": "i1.wp.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://i1.wp.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259148584
+  },
+  "lh5.googleusercontent.com": {
+    "key": "lh5.googleusercontent.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://lh5.googleusercontent.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259150633
+  },
+  "stock.adobe.com": {
+    "key": "stock.adobe.com",
+    "value": [
+      {
+        "size": {
+          "width": 17,
+          "height": 17
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://stock.adobe.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259152035
+  },
+  "1.bp.blogspot.com": {
+    "key": "1.bp.blogspot.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://1.bp.blogspot.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259154314
+  },
+  "discogs.com": {
+    "key": "discogs.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://st.discogs.com/621e5382341ae85b3fcbcec60c336854af4b7870/images/favicon.ico"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://st.discogs.com/621e5382341ae85b3fcbcec60c336854af4b7870/images/favicon-16x16.png"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://st.discogs.com/621e5382341ae85b3fcbcec60c336854af4b7870/images/favicon-32x32.png"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://st.discogs.com/621e5382341ae85b3fcbcec60c336854af4b7870/images/favicon-96x96.png"
+      },
+      {
+        "size": {
+          "width": 152,
+          "height": 152
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://st.discogs.com/621e5382341ae85b3fcbcec60c336854af4b7870/images/apple-touch-icon-precomposed.png"
+      }
+    ],
+    "expiration": 1717259154365
+  },
+  "solo.to": {
+    "key": "solo.to",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://solo.to/favicon.ico"
+      }
+    ],
+    "expiration": 1717259155247
+  },
+  "lh6.googleusercontent.com": {
+    "key": "lh6.googleusercontent.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://lh6.googleusercontent.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259156944
+  },
+  "pagead2.googlesyndication.com": {
+    "key": "pagead2.googlesyndication.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://pagead2.googlesyndication.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259156992
+  },
+  "landing.google.com": {
+    "key": "landing.google.com",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://landing.google.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259158091
+  },
+  "openai.com": {
+    "key": "openai.com",
+    "value": [
+      {
+        "size": {
+          "width": 100,
+          "height": 100
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://openai.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259166378
+  },
+  "lh4.googleusercontent.com": {
+    "key": "lh4.googleusercontent.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://lh4.googleusercontent.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259167859
+  },
+  "3.bp.blogspot.com": {
+    "key": "3.bp.blogspot.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://3.bp.blogspot.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259169814
+  },
+  "fastcompany.com": {
+    "key": "fastcompany.com",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://fastcompany.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259171962
+  },
+  "2.bp.blogspot.com": {
+    "key": "2.bp.blogspot.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://2.bp.blogspot.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259172293
+  },
+  "blacklivesmatter.com": {
+    "key": "blacklivesmatter.com",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://blacklivesmatter.com/wp-content/uploads/2019/09/cropped-siteicon-blm-black-192x192.png"
+      }
+    ],
+    "expiration": 1717259173220
+  },
+  "news.sciencemag.org": {
+    "key": "news.sciencemag.org",
+    "value": [
+      {
+        "size": {
+          "width": 120,
+          "height": 120
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.science.org/pb-assets/images/logos/apple-touch-icon-120x120.png"
+      },
+      {
+        "size": {
+          "width": 120,
+          "height": 120
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.science.org/pb-assets/images/logos/apple-touch-icon-120x120-precomposed.png"
+      }
+    ],
+    "expiration": 1717259174117
+  },
+  "4.bp.blogspot.com": {
+    "key": "4.bp.blogspot.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://4.bp.blogspot.com/favicon.ico"
+      }
+    ],
+    "expiration": 1717259174916
+  },
+  "nodejs.org": {
+    "key": "nodejs.org",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://nodejs.org/static/images/favicons/favicon.png"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://nodejs.org/favicon.ico"
+      }
+    ],
+    "expiration": 1717259177660
+  },
+  "census.gov": {
+    "key": "census.gov",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.census.gov/etc.clientlibs/census/clientlibs/common-site/resources/icons/android-chrome-192x192.png"
+      },
+      {
+        "size": {
+          "width": 256,
+          "height": 256
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.census.gov/etc.clientlibs/census/clientlibs/common-site/resources/icons/android-chrome-256x256.png"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.census.gov/etc.clientlibs/census/clientlibs/common-site/resources/icons/favicon.ico"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.census.gov/etc.clientlibs/census/clientlibs/common-site/resources/icons/apple-touch-icon-180x180.png"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.census.gov/favicon.ico"
+      }
+    ],
+    "expiration": 1717259178945
   }
 }

@@ -1,9 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
 import { load } from 'cheerio';
 
-
-import faviconsFromHTML from './faviconsFromHTML';
-import faviconsFromManifest from './faviconsFromManifest';
+import { pullFromHTML, pullFromManifest } from './strategies';
 
 import { getResponseDomain } from './utils';
 
@@ -37,8 +35,8 @@ export const getFavicons = async (url: string, options: AxiosOptions): Promise<s
     manifestIcons,
     htmlIcons
   ] = await Promise.all([
-    faviconsFromManifest(res),
-    faviconsFromHTML(res)
+    pullFromManifest(res),
+    pullFromHTML(res)
   ])
 
   // console.log(`Icons for ${url}`)

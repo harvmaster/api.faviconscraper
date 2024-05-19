@@ -1,8 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import { load } from 'cheerio'
-import { getResponseDomain } from './utils';
+import { getResponseDomain } from './../utils';
 
-export const faviconsFromManifest = async (response: AxiosResponse): Promise<string[]> => {
+export const pullFromManifest = async (response: AxiosResponse): Promise<string[]> => {
   const $ = load(response.data)
 
   const location = getResponseDomain(response)
@@ -27,4 +27,4 @@ export const faviconsFromManifest = async (response: AxiosResponse): Promise<str
   return icons
 }
 
-export default faviconsFromManifest
+export default pullFromManifest

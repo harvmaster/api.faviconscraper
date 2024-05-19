@@ -1,9 +1,9 @@
 import { AxiosResponse } from 'axios'
 import { load } from 'cheerio'
 
-import { FAVICON_TAGS } from '../FaviconTags'
+import { FAVICON_TAGS } from '../../FaviconTags'
 
-export const faviconsFromHTML = async (response: AxiosResponse): Promise<string[]> => {
+export const pullFromHTML = async (response: AxiosResponse): Promise<string[]> => {
   const $ = load(response.data)
 
   let icons: string[] = []
@@ -22,4 +22,4 @@ export const faviconsFromHTML = async (response: AxiosResponse): Promise<string[
   return icons
 }
 
-export default faviconsFromHTML
+export default pullFromHTML
