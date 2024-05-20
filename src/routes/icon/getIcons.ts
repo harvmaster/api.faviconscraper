@@ -12,7 +12,7 @@ import { removeDuplicates } from "../../lib";
 const CACHE_TIME = 1000 * 60 * 60 * 24 * 14
 
 const LOG_REQUEST = true
-const USE_CACHE = true
+const USE_CACHE = false
 
 const USE_AXIOS = true
 const USE_PUPPETEER = true
@@ -48,46 +48,35 @@ const logRequest = (req: Request) => {
   );
 }
 
-// fetch the icons using axios
-const useAxios = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
-  if (!USE_AXIOS) throw new Error("Axios is disabled");
-
+const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]): Promise<RawIcon[]> => {
   let errors: any[] = []
   const handleError = (err: any) => {
     errors.push(err);
     return []
   }
 
-  const [desktopIcons, mobileIcons] = await Promise.all([
-    Axios.getDesktopIcons(url as string).catch(handleError),
-    Axios.getMobileIcons(url as string).catch(handleError)
-  ]);
-  
+  const results = await Promise.all(fns().map(fn => fn.catch(handleError)));
+
   if (errors.length) throw errors
-  
-  const icons = removeDuplicates([...desktopIcons, ...mobileIcons], (icon) => icon.src);
+
+  const icons = removeDuplicates(results.flat(), (icon) => icon.src);
   return icons
+}
+
+// fetch the icons using axios
+const useAxios = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
+  if (!USE_AXIOS) throw new Error("Axios is disabled");
+
+  const axiosScrapers = () => [Axios.getDesktopIcons(url), Axios.getMobileIcons(url)]
+  return useScraper(event, axiosScrapers);
 }
 
 // fetch the icons using puppeteer
 const usePuppeteer = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
   if (!USE_PUPPETEER) throw new Error("Puppeteer is disabled");
 
-  let errors: any[] = []
-  const handleError = (err: any) => {
-    errors.push(err);
-    return []
-  }
-
-  const [desktopIcons, mobileIcons] = await Promise.all([
-    Puppeteer.getDesktopIcons(url as string).catch(handleError),
-    Puppeteer.getMobileIcons(url as string).catch(handleError)
-  ]);
-
-  if (errors.length) throw errors
-
-  const icons = removeDuplicates([...desktopIcons, ...mobileIcons], (icon) => icon.src);
-  return icons
+  const puppeteerScrapers = () => [Puppeteer.getDesktopIcons(url), Puppeteer.getMobileIcons(url)]
+  return useScraper(event, puppeteerScrapers);
 }
 
 // pipe the event through the function and log the result to the event
