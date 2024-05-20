@@ -168,7 +168,7 @@ export const getIcons = async (req: Request, res: Response) => {
   return res.json(icons);
 }
 
-export const routeGetIcons = (req: Request, res: Response) => {
+export const route_getIcons = (req: Request, res: Response) => {
   try {
     getIcons(req, res);
   } catch (err) {
@@ -177,4 +177,4 @@ export const routeGetIcons = (req: Request, res: Response) => {
   }
 }
 
-export default routeGetIcons
+export default route_getIcons
