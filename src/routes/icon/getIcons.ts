@@ -157,6 +157,7 @@ export const getIcons = async (req: Request, res: Response) => {
   return res.json(icons);
 }
 
+// export the route handler with error handling
 export const route_getIcons = (req: Request, res: Response) => {
   try {
     getIcons(req, res);
