@@ -92,7 +92,9 @@ const usePuppeteer = async (event: ScraperEvent, url: string): Promise<RawIcon[]
 
 // pipe the event through the function and log the result to the event
 const pipeEvent = async <T>(event: ScraperEvent, name: string, fn: () => Promise<T>): Promise<T> => {
-  const { result, errors } = await fn().then((res) => ({ result: res, errors: [] })).catch((err) => ({ result: [], errors: [err] })) as { result: T, errors: any[] };
+  const { result, errors } = await fn()
+      .then((res) => ({ result: res, errors: [] }))
+      .catch((err) => ({ result: [], errors: [err] })) as { result: T, errors: any[] };
 
   event.history.push({
     name,
@@ -147,9 +149,13 @@ export const getIcons = async (req: Request, res: Response) => {
   // probe the icons to get their dimensions
   const icons = await probeIcons(event, rawIcons);
 
+  // Update the Event. Its not going to change past this point
+  event.completed = new Date();
+  event.result = icons;
+
   // return if no icons are found
   if (!icons.length) {
-    event.errors.push("No icons found");
+    event.errors?.push("No icons found");
     return res.status(404).json({ error: "No icons found" });
   }
 
@@ -159,9 +165,16 @@ export const getIcons = async (req: Request, res: Response) => {
   }
 
   // return the icons
-  event.completed = new Date();
-  event.result = icons;
   return res.json(icons);
 }
 
-export default getIcons
+export const routeGetIcons = (req: Request, res: Response) => {
+  try {
+    getIcons(req, res);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+}
+
+export default routeGetIcons
