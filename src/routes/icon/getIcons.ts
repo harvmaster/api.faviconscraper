@@ -5,20 +5,21 @@ import Analytics, { ScraperEvent } from "../../services/Analytics";
 
 import { Axios, Puppeteer } from "../../services/scrapers";
 
-import { Icon, RawIcon } from "../../services/scrapers/types";
+import { Icon, RawIcon } from "../../types";
 import { probeIconSrc } from "../../core/icons/probeIconSrc";
 import { removeDuplicates } from "../../lib";
+import { ScrapingDevicesOptions, ScrapingOptions } from "../../types";
 
 const CACHE_TIME = 1000 * 60 * 60 * 24 * 14
 
 const LOG_REQUEST = true
-const USE_CACHE = false
+const USE_CACHE = true
 
 const USE_AXIOS = true
 const USE_PUPPETEER = true
 
 // try to get the icons from the cache
-const tryFromCache = async (event: ScraperEvent, url: string) => {
+const tryFromCache = async (event: ScraperEvent, url: string, options?: ScrapingOptions) => {
   if (!USE_CACHE) return null
 
   const cachedIcons = await CacheManager.get(url);
@@ -27,6 +28,18 @@ const tryFromCache = async (event: ScraperEvent, url: string) => {
     event.completed = new Date();
     event.cache = true;
     event.result = cachedIcons;
+
+    if (options) {
+      const filteredIcons = cachedIcons.filter((icon) => {
+        if (icon.device === "desktop") return options.devices.desktop;
+        if (icon.device === "mobile") return options.devices.mobile;
+        return false;
+      });
+
+      if (filteredIcons.length) {
+        return filteredIcons;
+      }
+    }
 
     return cachedIcons;
   }
@@ -40,12 +53,27 @@ const logRequest = (req: Request) => {
 
   const url = req.query.url as string;
   const ip = req.headers["x-forwarded-for"] as string;
+  const options = getScrapingOptions(req);
+
   console.log(
     "Fetching icons for", url,
     "from", ip,
     "at", new Date().toLocaleString("en-AU", { timeZone: "Australia/Sydney" }),
+    "with options", options,
     " (revised_getIcon)"
   );
+}
+
+const getScrapingOptions = (req: Request): ScrapingOptions => {
+  const { devices } = req.query as { devices: string[] }
+  const deviceOptions = { desktop: true, mobile: true }
+
+  if (devices) {
+    deviceOptions.desktop = devices.includes("desktop");
+    deviceOptions.mobile = devices.includes("mobile");
+  }
+
+  return { devices: deviceOptions }
 }
 
 const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]): Promise<RawIcon[]> => {
@@ -55,7 +83,7 @@ const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]):
     return []
   }
 
-  const results = await Promise.all(fns().map(fn => fn.catch(handleError)));
+  const results = await Promise.all(fns().map(fn => fn ? fn.catch(handleError) : []));
 
   if (errors.length) throw errors
 
@@ -64,18 +92,31 @@ const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]):
 }
 
 // fetch the icons using axios
-const useAxios = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
+const useAxios = async (event: ScraperEvent, url: string, options?: ScrapingOptions): Promise<RawIcon[]> => {
   if (!USE_AXIOS) throw new Error("Axios is disabled");
 
-  const axiosScrapers = () => [Axios.getDesktopIcons(url), Axios.getMobileIcons(url)]
+  console.log('useAxios')
+  console.log(options?.devices.desktop !== false, options?.devices.mobile !== false)
+
+  const axiosScrapers = () => [
+    (options?.devices.desktop !== false ? Axios.getDesktopIcons(url) : undefined),
+    (options?.devices.mobile !== false ? Axios.getMobileIcons(url) : undefined)
+  ]
+
+  const res = await axiosScrapers();
+  console.log(res)
+
   return useScraper(event, axiosScrapers);
 }
 
 // fetch the icons using puppeteer
-const usePuppeteer = async (event: ScraperEvent, url: string): Promise<RawIcon[]> => {
+const usePuppeteer = async (event: ScraperEvent, url: string, options?: ScrapingOptions): Promise<RawIcon[]> => {
   if (!USE_PUPPETEER) throw new Error("Puppeteer is disabled");
 
-  const puppeteerScrapers = () => [Puppeteer.getDesktopIcons(url), Puppeteer.getMobileIcons(url)]
+  const puppeteerScrapers = () => [
+    (options?.devices.desktop !== false ? Puppeteer.getDesktopIcons(url) : undefined),
+    (options?.devices.mobile !== false ? Puppeteer.getMobileIcons(url) : undefined)
+  ]
   return useScraper(event, puppeteerScrapers);
 }
 
@@ -121,18 +162,21 @@ export const getIcons = async (req: Request, res: Response) => {
   logRequest(req);
   const event = Analytics.createEvent(req.headers["x-forwarded-for"] as string, url);
 
+  // Get the scraping options
+  const options = getScrapingOptions(req);
+
   // Check if the url has been scraped before, if it has, update the event and return the cached icons
-  const cachedIcons = await tryFromCache(event, url);
+  const cachedIcons = await tryFromCache(event, url, options);
   if (cachedIcons) {
     return res.json(cachedIcons);
   }
 
   // Fetch the icons using axios
-  let rawIcons = await pipeEvent(event, "useAxios", () => useAxios(event, url));
+  let rawIcons = await pipeEvent(event, "useAxios", () => useAxios(event, url, options));
 
   // use puppeteer to get the icons if axios fails
   if (!rawIcons.length) {
-    rawIcons = await pipeEvent(event, "usePuppeteer", () => usePuppeteer(event, url));
+    rawIcons = await pipeEvent(event, "usePuppeteer", () => usePuppeteer(event, url, options));
   }
 
   // probe the icons to get their dimensions

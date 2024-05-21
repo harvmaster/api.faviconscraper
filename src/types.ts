@@ -3,12 +3,12 @@ export type Icon = {
   type: string;
   mime: string;
   src: string;
-  source: 'desktop' | 'mobile';
+  device: 'desktop' | 'mobile';
 }
 
 export type RawIcon = {
   src: string;
-  source: 'desktop' | 'mobile';
+  device: 'desktop' | 'mobile';
 }
 
 export type PipelineEvent = {
@@ -20,4 +20,13 @@ export type PipelineEvent = {
 export type PipelineAction<T> = {
   event: PipelineEvent;
   data?: T;
+}
+
+export type ScrapingDevicesOptions = {
+  desktop: boolean;
+  mobile: boolean;
+}
+
+export type ScrapingOptions = {
+  devices: ScrapingDevicesOptions;
 }

@@ -29,7 +29,7 @@ export const probeIconSrc = async (icon: RawIcon): Promise<PipelineAction<Icon>>
         type,
         mime,
         src: icon.src,
-        source: icon.source
+        device: icon.device
       }
     }
   } catch (error) {
