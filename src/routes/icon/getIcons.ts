@@ -89,6 +89,12 @@ const getScrapingOptions = (req: Request): ScrapingOptions => {
   return { url, devices: deviceOptions }
 }
 
+// check if the url is valid
+const isValidDomain = (url: string) => {
+  let regex = new RegExp(/^(?!-)[A-Za-z0-9-]+([\-\.]{1}[a-z0-9]+)*\.[A-Za-z]{2,6}$/);
+  return regex.test(url);
+}
+
 // Generic scraper function that takes a list of functions and runs them in parallel
 const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]): Promise<RawIcon[]> => {
   let errors: any[] = []
@@ -167,6 +173,10 @@ export const getIcons = async (req: Request, res: Response) => {
     return res.status(400).json({ error: "URL is required" });
   }
 
+  if (!isValidDomain(url)) {
+    return res.status(400).json({ error: "Invalid URL" });
+  }
+
   // I have this here to know if the server is currently being used and by how many unique users
   logRequest(req);
   const event = Analytics.createEvent(req.headers["x-forwarded-for"] as string, url);
@@ -214,7 +224,9 @@ export const route_getIcons = (req: Request, res: Response) => {
   try {
     getIcons(req, res);
   } catch (err) {
-    console.error(err);
+    if (err?.message && !err.message.includes('ERR_NAME_NOT_RESOLVED')) {
+      console.error(err);
+    }
     res.status(500).json({ error: "Internal server error" });
   }
 }
