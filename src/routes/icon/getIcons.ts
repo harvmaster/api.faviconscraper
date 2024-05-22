@@ -65,7 +65,7 @@ const logRequest = (req: Request) => {
 }
 
 const getScrapingOptions = (req: Request): ScrapingOptions => {
-  const { devices } = req.query as { devices: string[] }
+  const { url, devices } = req.query as { url: string, devices: string[] }
   const deviceOptions = { desktop: true, mobile: true }
 
   if (devices) {
@@ -73,7 +73,7 @@ const getScrapingOptions = (req: Request): ScrapingOptions => {
     deviceOptions.mobile = devices.includes("mobile");
   }
 
-  return { devices: deviceOptions }
+  return { url, devices: deviceOptions }
 }
 
 const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]): Promise<RawIcon[]> => {
@@ -95,16 +95,10 @@ const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]):
 const useAxios = async (event: ScraperEvent, url: string, options?: ScrapingOptions): Promise<RawIcon[]> => {
   if (!USE_AXIOS) throw new Error("Axios is disabled");
 
-  console.log('useAxios')
-  console.log(options?.devices.desktop !== false, options?.devices.mobile !== false)
-
   const axiosScrapers = () => [
     (options?.devices.desktop !== false ? Axios.getDesktopIcons(url) : undefined),
     (options?.devices.mobile !== false ? Axios.getMobileIcons(url) : undefined)
   ]
-
-  const res = await axiosScrapers();
-  console.log(res)
 
   return useScraper(event, axiosScrapers);
 }
@@ -153,7 +147,8 @@ const probeIcons = async (event: ScraperEvent, icons: RawIcon[]): Promise<Icon[]
 }
 
 export const getIcons = async (req: Request, res: Response) => {
-  const { url } = req.query as { url: string }
+  const options = getScrapingOptions(req);
+  const url = options.url;
   if (!url) {
     return res.status(400).json({ error: "URL is required" });
   }
@@ -163,7 +158,6 @@ export const getIcons = async (req: Request, res: Response) => {
   const event = Analytics.createEvent(req.headers["x-forwarded-for"] as string, url);
 
   // Get the scraping options
-  const options = getScrapingOptions(req);
 
   // Check if the url has been scraped before, if it has, update the event and return the cached icons
   const cachedIcons = await tryFromCache(event, url, options);

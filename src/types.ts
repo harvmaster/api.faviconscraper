@@ -28,5 +28,6 @@ export type ScrapingDevicesOptions = {
 }
 
 export type ScrapingOptions = {
+  url: string;
   devices: ScrapingDevicesOptions;
 }

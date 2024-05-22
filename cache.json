@@ -69698,5 +69698,915 @@
       null
     ],
     "expiration": 1209600000
+  },
+  "rcnradio.com": {
+    "key": "rcnradio.com",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.rcnradio.com/android-chrome-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 256,
+          "height": 256
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.rcnradio.com/android-chrome-256x256.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.rcnradio.com/apple-touch-icon.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.rcnradio.com/favicon-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.rcnradio.com/favicon-16x16.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 260,
+          "height": 260
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://www.rcnradio.com/safari-pinned-tab.svg",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.rcnradio.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "reuters.it": {
+    "key": "reuters.it",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.reuters.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "riskassur-hebdo.com": {
+    "key": "riskassur-hebdo.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "bmp",
+        "mime": "image/bmp",
+        "src": "https://www.riskassur-hebdo.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "elmundo.com": {
+    "key": "elmundo.com",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.elmundo.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "youm7.com": {
+    "key": "youm7.com",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://img.youm7.com/images/graphics/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.youm7.com/apple-touch-icon.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.youm7.com/favicon-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.youm7.com/favicon-16x16.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 2008,
+          "height": 2008
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://www.youm7.com/safari-pinned-tab.svg",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 64,
+          "height": 64
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.youm7.com/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://m.youm7.com/apple-touch-icon.png",
+        "device": "mobile"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://m.youm7.com/favicon-32x32.png",
+        "device": "mobile"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://m.youm7.com/favicon-16x16.png",
+        "device": "mobile"
+      },
+      {
+        "size": {
+          "width": 2008,
+          "height": 2008
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://m.youm7.com/safari-pinned-tab.svg",
+        "device": "mobile"
+      },
+      {
+        "size": {
+          "width": 64,
+          "height": 64
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://m.youm7.com/favicon.ico",
+        "device": "mobile"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "israeldefense.co.il": {
+    "key": "israeldefense.co.il",
+    "value": [
+      {
+        "size": {
+          "width": 33,
+          "height": 34
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.israeldefense.co.il/themes/israel_defense/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "dailytimes.com.pk": {
+    "key": "dailytimes.com.pk",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/assets/uploads/2020/08/app-icon-192x192-1.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 512,
+          "height": 512
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/assets/uploads/2020/08/app-icon-512x512-1.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 57,
+          "height": 57
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-57x57.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-60x60.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 72,
+          "height": 72
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-72x72.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 76,
+          "height": 76
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-76x76.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 114,
+          "height": 114
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-114x114.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 120,
+          "height": 120
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-120x120.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 144,
+          "height": 144
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-144x144.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 152,
+          "height": 152
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-152x152.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/apple-icon-180x180.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/android-icon-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/favicon-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/favicon-96x96.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dailytimes.com.pk/favicon-16x16.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://dailytimes.com.pk/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "punekarnews.in": {
+    "key": "punekarnews.in",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.punekarnews.in/wp-content/uploads/2015/10/cropped-Punekar-News-logo41-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.punekarnews.in/wp-content/uploads/2015/10/cropped-Punekar-News-logo41-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.punekarnews.in/wp-content/uploads/2015/10/cropped-Punekar-News-logo41-180x180.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.punekarnews.in/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "qualenergia.it": {
+    "key": "qualenergia.it",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://qualenergia.it/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "thestreet.com": {
+    "key": "thestreet.com",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://thestreet.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "parade.com": {
+    "key": "parade.com",
+    "value": [
+      {
+        "size": {
+          "width": 114,
+          "height": 114
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://parade.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "bikemag.com": {
+    "key": "bikemag.com",
+    "value": [
+      {
+        "size": {
+          "width": 513,
+          "height": 513
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://bikemag.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "paulickreport.com": {
+    "key": "paulickreport.com",
+    "value": [
+      {
+        "size": {
+          "width": 500,
+          "height": 500
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://paulickreport.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "viadiplomacy.gr": {
+    "key": "viadiplomacy.gr",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.viadiplomacy.gr/wp-content/uploads/2014/09/favicon.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.viadiplomacy.gr/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "agenciadenoticias.ibge.gov.br": {
+    "key": "agenciadenoticias.ibge.gov.br",
+    "value": [
+      {
+        "size": {
+          "width": 144,
+          "height": 144
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/android-icon-144x144.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 57,
+          "height": 57
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-57x57.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-60x60.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 72,
+          "height": 72
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-72x72.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 76,
+          "height": 76
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-76x76.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 114,
+          "height": 114
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-114x114.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 120,
+          "height": 120
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-120x120.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 144,
+          "height": 144
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-144x144.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 152,
+          "height": 152
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-152x152.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/apple-icon-180x180.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/android-icon-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/favicon-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/favicon-96x96.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://agenciadenoticias.ibge.gov.br/templates/novo_portal_base/imagens/icons/favicon-16x16.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "petroleohoje.editorabrasilenergia.com.br": {
+    "key": "petroleohoje.editorabrasilenergia.com.br",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://brasilenergia.com.br/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "ctinsider.com": {
+    "key": "ctinsider.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.ctinsider.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "volcanodiscovery.com": {
+    "key": "volcanodiscovery.com",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://volcanodiscovery.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "lamag.com": {
+    "key": "lamag.com",
+    "value": [
+      {
+        "size": {
+          "width": 1000,
+          "height": 1000
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://lamag.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "barrons.com": {
+    "key": "barrons.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.barrons.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "24h.com.br": {
+    "key": "24h.com.br",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://24h.com.br/wp-content/uploads/2022/04/IOS01.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://24h.com.br/wp-content/uploads/2022/04/cropped-icone-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://24h.com.br/wp-content/uploads/2022/04/cropped-icone-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://24h.com.br/wp-content/uploads/2022/04/cropped-icone-180x180.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "whistleout.com.au": {
+    "key": "whistleout.com.au",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.whistleout.com.au/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "marketwatch.com": {
+    "key": "marketwatch.com",
+    "value": [
+      {
+        "size": {
+          "width": 64,
+          "height": 64
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.marketwatch.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "palmbeachdailynews.com": {
+    "key": "palmbeachdailynews.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.palmbeachdailynews.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "apps.npr.org": {
+    "key": "apps.npr.org",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://blog.apps.npr.org/img/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
   }
 }
