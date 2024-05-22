@@ -99,7 +99,11 @@ const isValidDomain = (url: string) => {
 const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]): Promise<RawIcon[]> => {
   let errors: any[] = []
   const handleError = (err: any) => {
-    errors.push(err);
+    if (err.code === "ENOTFOUND") {
+      errors.push("Invalid URL");
+    } else {
+      errors.push(err);
+    }
     return []
   }
 
