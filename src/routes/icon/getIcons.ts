@@ -64,6 +64,7 @@ const logRequest = (req: Request) => {
   );
 }
 
+// get the queries from the request and convert them to lowercase
 const getLowerCaseQueries = (req: Request) => {
   const queries = req.query as { [key: string]: string };
   const lowerCaseQueries: { [key: string]: string } = {};
@@ -75,6 +76,7 @@ const getLowerCaseQueries = (req: Request) => {
   return lowerCaseQueries;
 }
 
+// get the scraping options from the request
 const getScrapingOptions = (req: Request): ScrapingOptions => {
   const { url, devices } = getLowerCaseQueries(req) as unknown as { url: string, devices: string[] };
   const deviceOptions = { desktop: true, mobile: true }
@@ -87,6 +89,7 @@ const getScrapingOptions = (req: Request): ScrapingOptions => {
   return { url, devices: deviceOptions }
 }
 
+// Generic scraper function that takes a list of functions and runs them in parallel
 const useScraper = async (event: ScraperEvent, fns: () => Promise<RawIcon[]>[]): Promise<RawIcon[]> => {
   let errors: any[] = []
   const handleError = (err: any) => {
