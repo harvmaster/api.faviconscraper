@@ -64,8 +64,19 @@ const logRequest = (req: Request) => {
   );
 }
 
+const getLowerCaseQueries = (req: Request) => {
+  const queries = req.query as { [key: string]: string };
+  const lowerCaseQueries: { [key: string]: string } = {};
+
+  for (const key in queries) {
+    lowerCaseQueries[key.toLowerCase()] = queries[key];
+  }
+
+  return lowerCaseQueries;
+}
+
 const getScrapingOptions = (req: Request): ScrapingOptions => {
-  const { url, devices } = req.query as { url: string, devices: string[] }
+  const { url, devices } = getLowerCaseQueries(req) as unknown as { url: string, devices: string[] };
   const deviceOptions = { desktop: true, mobile: true }
 
   if (devices) {
