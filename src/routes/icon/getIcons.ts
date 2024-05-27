@@ -22,29 +22,23 @@ const USE_PUPPETEER = true
 const tryFromCache = async (event: ScraperEvent, url: string, options?: ScrapingOptions) => {
   if (!USE_CACHE) return null
 
-  const cachedIcons = await CacheManager.get(url);
+  let cachedIcons = await CacheManager.get(url);
+  if (!cachedIcons) return null;
 
-  if (cachedIcons) {
-    event.completed = new Date();
-    event.cache = true;
-    event.result = cachedIcons;
+  cachedIcons = cachedIcons.filter(icon => icon !== null)
+  event.completed = new Date();
+  event.cache = true;
+  event.result = cachedIcons;
 
-    if (options) {
-      const filteredIcons = cachedIcons.filter((icon) => {
-        if (icon.device === "desktop") return options.devices.desktop;
-        if (icon.device === "mobile") return options.devices.mobile;
-        return false;
-      });
+  if (!options) return cachedIcons;
 
-      if (filteredIcons.length) {
-        return filteredIcons;
-      }
-    }
+  cachedIcons = cachedIcons.filter((icon) => {
+    if (icon.device === "desktop") return options.devices?.desktop;
+    if (icon.device === "mobile") return options.devices?.mobile;
+    return false;
+  });
 
-    return cachedIcons;
-  }
-
-  return null;
+  return cachedIcons
 }
 
 // log the request
