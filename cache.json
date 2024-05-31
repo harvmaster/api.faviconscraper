@@ -70608,5 +70608,1125 @@
       }
     ],
     "expiration": 1209600000
+  },
+  "tepapa.govt.nz": {
+    "key": "tepapa.govt.nz",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.tepapa.govt.nz/android-chrome-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 512,
+          "height": 512
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.tepapa.govt.nz/android-chrome-512x512.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.tepapa.govt.nz/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 512,
+          "height": 512
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://www.tepapa.govt.nz/favicon.svg",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.tepapa.govt.nz/apple-touch-icon.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "fosi.org": {
+    "key": "fosi.org",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://assets-global.website-files.com/5f47b99bcd1b0e76b7a78b88/5f7fcd1f4dbe5b8b017f80d8_FOS_Favicon.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 256,
+          "height": 256
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://assets-global.website-files.com/5f47b99bcd1b0e76b7a78b88/5f7fcd98277ce6f0e9b496ac_Screen%20Shot%202020-10-08%20at%2010.39.29%20PM.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "tripadvisor.com": {
+    "key": "tripadvisor.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://tripadvisor.com/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://static.tacdn.com/favicon.ico?v2",
+        "device": "mobile"
+      },
+      {
+        "size": {
+          "width": 800,
+          "height": 800
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://static.tacdn.com/img2/brand_refresh/application_icons/mask-icon.svg",
+        "device": "mobile"
+      },
+      {
+        "size": {
+          "width": 256,
+          "height": 256
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://static.tacdn.com/img2/brand_refresh/application_icons/touch-icon.png",
+        "device": "mobile"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://static.tacdn.com/img2/brand_refresh/application_icons/touch-icon-180x180.png",
+        "device": "mobile"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "revenue.wi.gov": {
+    "key": "revenue.wi.gov",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.revenue.wi.gov/_catalogs/masterpage/Tile Design/img/favicon/android-chrome-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 384,
+          "height": 384
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.revenue.wi.gov/_catalogs/masterpage/Tile Design/img/favicon/android-chrome-384x384.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.revenue.wi.gov/_catalogs/masterpage/Tile Design/img/favicon/apple-touch-icon.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.revenue.wi.gov/_catalogs/masterpage/Tile Design/img/favicon/favicon-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.revenue.wi.gov/_catalogs/masterpage/Tile Design/img/favicon/favicon-16x16.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.revenue.wi.gov/_catalogs/masterpage/Tile Design/img/favicon/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "agi.it": {
+    "key": "agi.it",
+    "value": [
+      {
+        "size": {
+          "width": 57,
+          "height": 57
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-57x57.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-60x60.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 72,
+          "height": 72
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-72x72.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 76,
+          "height": 76
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-76x76.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 114,
+          "height": 114
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-114x114.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 120,
+          "height": 120
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-120x120.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 144,
+          "height": 144
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-144x144.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 152,
+          "height": 152
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-152x152.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/apple-icon-180x180.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/android-icon-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/favicon-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/favicon-96x96.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.agi.it/favicons/favicon-16x16.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "timesnowmarathi.com": {
+    "key": "timesnowmarathi.com",
+    "value": [
+      {
+        "size": {
+          "width": 36,
+          "height": 36
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/mr-tnn-36.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/mr-tnn-48.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 72,
+          "height": 72
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/mr-tnn-72.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/mr-tnn-96.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 144,
+          "height": 144
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/mr-tnn-144.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/mr-tnn-192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 512,
+          "height": 512
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/mr-tnn-512.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://marathi.timesnownews.com/tnnassets/images/icons/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://marathi.timesnownews.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "hurdangnews.in": {
+    "key": "hurdangnews.in",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://hurdangnews.in/wp-content/uploads/2024/05/cropped-hd-512-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://hurdangnews.in/wp-content/uploads/2024/05/cropped-hd-512-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://hurdangnews.in/wp-content/uploads/2024/05/cropped-hd-512-180x180.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "console.upstash.com": {
+    "key": "console.upstash.com",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://console.upstash.com/static/icons/android-chrome-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 512,
+          "height": 512
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://console.upstash.com/static/icons/android-chrome-512x512.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://console.upstash.com/static/icons/apple-touch-icon.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://console.upstash.com/static/icons/favicon-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://console.upstash.com/static/icons/favicon-16x16.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 700,
+          "height": 700
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://console.upstash.com/static/icons/safari-pinned-tab.svg",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "pieces.app": {
+    "key": "pieces.app",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://pieces.app/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "fapergs.rs.gov.br": {
+    "key": "fapergs.rs.gov.br",
+    "value": [
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://fapergs.rs.gov.br/themes/modelo-institucional2/ico/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "gearjunkie.com": {
+    "key": "gearjunkie.com",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://s3.us-east-1.amazonaws.com/images.gearjunkie.com/uploads/2024/05/cropped-favicon-1-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://s3.us-east-1.amazonaws.com/images.gearjunkie.com/uploads/2024/05/cropped-favicon-1-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://s3.us-east-1.amazonaws.com/images.gearjunkie.com/uploads/2024/05/cropped-favicon-1-180x180.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "tcpalm.com": {
+    "key": "tcpalm.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.tcpalm.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "gosanangelo.com": {
+    "key": "gosanangelo.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.gosanangelo.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "monroenews.com": {
+    "key": "monroenews.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.monroenews.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "docs.pieces.app": {
+    "key": "docs.pieces.app",
+    "value": [
+      {
+        "size": {
+          "width": 465,
+          "height": 465
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://docs.pieces.app/assets/pieces_logos/white_circle.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "enavabharat.com": {
+    "key": "enavabharat.com",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://navbharatlive.com/wp-content/themes/veegamtheme-v1/images/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://s3.ap-south-1.amazonaws.com/media.enavabharat.com/wp-content/uploads/2024/05/favicon-96x96.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 228,
+          "height": 281
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://s3.ap-south-1.amazonaws.com/media.enavabharat.com/wp-content/uploads/2024/05/favicon.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://navbharatlive.com/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "money.pl": {
+    "key": "money.pl",
+    "value": [
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://money.wpcdn.pl/i/icons/48.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 72,
+          "height": 72
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://money.wpcdn.pl/i/icons/72.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 96,
+          "height": 96
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://money.wpcdn.pl/i/icons/96.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 144,
+          "height": 144
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://money.wpcdn.pl/i/icons/144.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 168,
+          "height": 168
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://money.wpcdn.pl/i/icons/168.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://money.wpcdn.pl/i/icons/192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 128,
+          "height": 128
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.money.pl/static/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 128,
+          "height": 128
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.money.pl/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "app.eraser.io": {
+    "key": "app.eraser.io",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://app.eraser.io/icon-192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 512,
+          "height": 512
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://app.eraser.io/icon-512.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://app.eraser.io/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 1696,
+          "height": 660.3
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://app.eraser.io/favicon.svg",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://app.eraser.io/apple-touch-icon.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "kosu.org": {
+    "key": "kosu.org",
+    "value": [
+      {
+        "size": {
+          "width": 260,
+          "height": 260
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://www.kosu.org/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "dev.to": {
+    "key": "dev.to",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 179
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://media.dev.to/cdn-cgi/image/width=180,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 152,
+          "height": 151
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://media.dev.to/cdn-cgi/image/width=152,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 167,
+          "height": 166
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://media.dev.to/cdn-cgi/image/width=167,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 191
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://media.dev.to/cdn-cgi/image/width=192,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 128,
+          "height": 127
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://media.dev.to/cdn-cgi/image/width=128,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://dev.to/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "sul21.com.br": {
+    "key": "sul21.com.br",
+    "value": [
+      {
+        "size": {
+          "width": 1,
+          "height": 1
+        },
+        "type": "gif",
+        "mime": "image/gif",
+        "src": "https://sul21.com.br/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "ui.shadcn.com": {
+    "key": "ui.shadcn.com",
+    "value": [
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://ui.shadcn.com/android-chrome-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 512,
+          "height": 512
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://ui.shadcn.com/android-chrome-512x512.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 16,
+          "height": 16
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://ui.shadcn.com/favicon-16x16.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://ui.shadcn.com/favicon.ico",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://ui.shadcn.com/apple-touch-icon.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "lifestyle.inquirer.net": {
+    "key": "lifestyle.inquirer.net",
+    "value": [
+      {
+        "size": {
+          "width": 129,
+          "height": 129
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://lifestyle.inquirer.net/files/2024/05/apple-touch-icon-129x129.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://lifestyle.inquirer.net/files/2024/05/apple-touch-icon.png",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "artic.edu": {
+    "key": "artic.edu",
+    "value": [
+      {
+        "size": {
+          "width": 101,
+          "height": 101
+        },
+        "type": "svg",
+        "mime": "image/svg+xml",
+        "src": "https://www.artic.edu/dist/images/aic-favicon-f0b6917f5c.svg",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "ico",
+        "mime": "image/x-icon",
+        "src": "https://www.artic.edu/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
+  },
+  "bito.ai": {
+    "key": "bito.ai",
+    "value": [
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://bito.ai/wp-content/uploads/2022/03/cropped-android-icon-192x192-1-32x32.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 192,
+          "height": 192
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://bito.ai/wp-content/uploads/2022/03/cropped-android-icon-192x192-1-192x192.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 180,
+          "height": 180
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://bito.ai/wp-content/uploads/2022/03/cropped-android-icon-192x192-1-180x180.png",
+        "device": "desktop"
+      },
+      {
+        "size": {
+          "width": 32,
+          "height": 32
+        },
+        "type": "png",
+        "mime": "image/png",
+        "src": "https://bito.ai/favicon.ico",
+        "device": "desktop"
+      }
+    ],
+    "expiration": 1209600000
   }
 }

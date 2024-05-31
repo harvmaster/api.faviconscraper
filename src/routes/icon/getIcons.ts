@@ -26,6 +26,8 @@ const tryFromCache = async (event: ScraperEvent, url: string, options?: Scraping
   if (!cachedIcons) return null;
 
   cachedIcons = cachedIcons.filter(icon => icon !== null)
+  if (!cachedIcons.length) return null;
+
   event.completed = new Date();
   event.cache = true;
   event.result = cachedIcons;
@@ -35,6 +37,7 @@ const tryFromCache = async (event: ScraperEvent, url: string, options?: Scraping
   cachedIcons = cachedIcons.filter((icon) => {
     if (icon.device === "desktop") return options.devices?.desktop;
     if (icon.device === "mobile") return options.devices?.mobile;
+    if (!icon.device) return true;
     return false;
   });
 
